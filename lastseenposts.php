@@ -2,7 +2,7 @@
 /*
 Plugin Name: Last Seen Posts
 Plugin URI: http://curlybracket.net/plugz/lsp
-Version: 1.0
+Version: 1.1
 Author: Ulrike Uhlig
 Author URI: http://curlybracket.net
 License: GPLv2
@@ -33,22 +33,13 @@ License: GPLv2
  * and at logout and login to end the session
  */
 add_action('init', 'lspSimpleSessionStart', 1);
-add_action('wp_logout', 'lspSimpleSessionDestroy');
-add_action('wp_login', 'lspSimpleSessionDestroy');
+
 /**
  * start the session, after this call the PHP $_SESSION super global is available
  */
 function lspSimpleSessionStart() {
     if(!session_id())session_start();
 	ob_start();
-}
-
-/**
- * destroy the session, this removes any data saved in the session over logout-login
- */
-function lspSimpleSessionDestroy() {
-    session_destroy ();
-	ob_flush();
 }
 
 /**
@@ -90,7 +81,7 @@ function lastseenposts() {
 			"id_$lastseenid" => array (
 				"id" => $lastseenid,
 				"name" => $post->post_title,
-				"url" => $_SERVER['REQUEST_URI'] // $post->guid
+				"url" => $post->guid
 			)
 		);
 
@@ -120,13 +111,16 @@ class lastSeenPosts extends WP_widget {
 			echo $before_widget;
 			if($title)
 				echo $before_title . $title . $after_title;
+				echo '<ul class="lsp">';
 				foreach($lastseen_session as $tmp) {
 					if(is_array($tmp)) {
 						foreach($tmp as $lastseen_post) {
-							echo '<a class="lastseen" href="' .$lastseen_post['url']. '">' .$lastseen_post['name']. '</a><br />';
+							$post_thumbnail_id = get_the_post_thumbnail($lastseen_post['id']);
+							echo '<li><a class="lastseen" href="' .$lastseen_post['url']. '">' . $post_thumbnail_id . $lastseen_post['name']. '</a></li>';
 						}
 					}
 				}
+				echo '</ul>';
 			echo $after_widget;
 		}
     }
@@ -151,4 +145,14 @@ class lastSeenPosts extends WP_widget {
 }
 add_action('wp_head', 'lastseenposts');
 add_action('widgets_init', create_function('', 'return register_widget("lastSeenPosts");'));
+
+// Stylesheet
+function lsp_styles() {
+	$style_path = WP_PLUGIN_DIR . '/lastseenposts/lsp.css';
+	if (file_exists($style_path)) {
+		wp_register_style('lsp_styles', plugins_url('lsp.css', __FILE__));
+		wp_enqueue_style( 'lsp_styles');
+	}
+}
+add_action('wp_enqueue_scripts', 'lsp_styles');
 ?>

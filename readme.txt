@@ -1,8 +1,8 @@
 === Last Seen Posts Widget ===
-Contributors: veganist, pkwooster
+Contributors: veganist
 Tags: post, session, widget, last seen, breadcrumbs, trail
 Requires at least: 2.8
-Tested up to: 3.5
+Tested up to: 3.5.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -35,13 +35,16 @@ Not yet.
 
 = Can I show a thumbnail alongside the title ? =
 
-Not yet.
+Yes. If your post has a featured image, this will show up here.
 
 == Screenshots ==
 
 1. Screenshot of widget and result in sidebar
 
 == Changelog ==
+
+= 1.1 =
+* added post thumbnail functionality
 
 = 1.0 =
 * Initial release
