@@ -11,8 +11,8 @@ Show title and links to the last 5 posts a user has consulted.
 
 == Description ==
 
-This plugin creates a widget which will show the title and link to the last 5 posts a user has consulted.
-To store the data, it uses sessions.
+This plugin creates a widget which will show the title, thumnail and link to the last 5 posts a user has consulted.
+To store the data it uses sessions.
 
 Session handling is provided by slightly modified functions from the simple-session-plugin by pkwooster.
 
