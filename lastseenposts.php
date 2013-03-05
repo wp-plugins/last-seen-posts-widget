@@ -148,7 +148,7 @@ add_action('widgets_init', create_function('', 'return register_widget("lastSeen
 
 // Stylesheet
 function lsp_styles() {
-	$style_path = WP_PLUGIN_DIR . '/lastseenposts/lsp.css';
+	$style_path = WP_PLUGIN_DIR . '/last-seen-posts-widget/lsp.css';
 	if (file_exists($style_path)) {
 		wp_register_style('lsp_styles', plugins_url('lsp.css', __FILE__));
 		wp_enqueue_style( 'lsp_styles');
