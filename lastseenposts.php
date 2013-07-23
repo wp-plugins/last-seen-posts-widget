@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Last Seen Posts
-Plugin URI: http://curlybracket.net/plugz/lsp
+Plugin URI: http://curlybracket.net/2013/03/01/last-seen-posts-widget/
 Version: 1.1
 Author: Ulrike Uhlig
 Author URI: http://curlybracket.net
