@@ -24,7 +24,7 @@ License: GPLv2
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 ?>
-<?
+<?php
 /*
  * Session handling functions from http://wordpress.org/extend/plugins/simple-session-support/ by P.K. Wooster
  */
