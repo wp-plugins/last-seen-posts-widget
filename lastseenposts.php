@@ -115,7 +115,7 @@ class lastSeenPosts extends WP_widget {
 				foreach($lastseen_session as $tmp) {
 					if(is_array($tmp)) {
 						foreach($tmp as $lastseen_post) {
-							$post_thumbnail_id = get_the_post_thumbnail($lastseen_post['id']);
+							$post_thumbnail_id = get_the_post_thumbnail($lastseen_post['id'], 'thumbnail');
 							echo '<li><a class="lastseen" href="' .$lastseen_post['url']. '">' . $post_thumbnail_id . $lastseen_post['name']. '</a></li>';
 						}
 					}

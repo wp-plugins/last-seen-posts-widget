@@ -1,8 +1,10 @@
 .lsp li {
     display: block;
-    margin-bottom: 1em;
+    margin-bottom: 1.5em;
 }
 
 .lsp .lastseen img {
     display: block;
+	max-width: 100%;
+	height: auto;
 }
