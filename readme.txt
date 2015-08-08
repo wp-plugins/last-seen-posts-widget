@@ -2,8 +2,8 @@
 Contributors: veganist
 Tags: post, session, widget, last seen, breadcrumbs, trail
 Requires at least: 2.8
-Tested up to: 3.9
-Stable tag: 1.2
+Tested up to: 4.2.4
+Stable tag: 1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 

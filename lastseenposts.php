@@ -2,7 +2,7 @@
 /*
 Plugin Name: Last Seen Posts
 Plugin URI: http://curlybracket.net/2013/03/01/last-seen-posts-widget/
-Version: 1.1
+Version: 1.3
 Author: Ulrike Uhlig
 Author URI: http://curlybracket.net
 License: GPLv2
@@ -98,7 +98,7 @@ function lastseenposts() {
  * Create Widget
  */
 class lastSeenPosts extends WP_widget {
-    function lastSeenPosts() {
+    public function __construct() { 
         // Constructor
         parent::WP_Widget(false, $name = 'lastSeenPosts', array("description" => 'Link to last seen posts'));
     }
